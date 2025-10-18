@@ -6,10 +6,9 @@ import java.io.IOException;
 import java.util.Map;
 
 /**
- * RawFrequencyReducer for ProfileA Job1.
- * Aggregates VolumeWriteable values produced by RawFrequencyMapper.
+ * Reducer that aggregates VolumeWriteable values. Moved out from NgramMapReduce.
  */
-public class RawFrequencyReducer extends Reducer<Text, VolumeWriteable, Text, VolumeWriteable> {
+public class CountReducer extends Reducer<Text, VolumeWriteable, Text, VolumeWriteable> {
 
     @Override
     public void reduce(Text key, Iterable<VolumeWriteable> values, Context context)
